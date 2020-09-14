@@ -67,6 +67,7 @@ function getRandomQuote(){
  * Creates HTML strings to display quotes and properties (based on conditions)on the page
  * Then changes background color of the page each time button is pressed
  */
+
 function printQuote(){
   const quoteObject = getRandomQuote();
 
