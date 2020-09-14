@@ -44,6 +44,8 @@ const quotes = [
     quote: "There’s a lot of beauty in ordinary things. Isn’t that kind of the point?",
     source: 'Pam Beesly-Halpert',
     citation: 'The Office',
+    year: 2013,
+    season: 'Season 9, "Finale"'
   }
 ];
 
@@ -52,6 +54,11 @@ const quotes = [
 ***/
 
 //Generate random number from array index positions
+
+function randomBackgroundGen(){
+  let randomColor = Math.floor( Math.random() * 256);
+  return randomColor;
+}
 
 function getRandomQuote(){
 
@@ -64,6 +71,7 @@ function getRandomQuote(){
 /***
  * `printQuote` function
 ***/
+
 
 
 function printQuote(){
@@ -83,9 +91,12 @@ function printQuote(){
   };
   html += '</p>'
 
-  document.getElementById('quote-box').innerHTML = html; 
+  document.getElementById('quote-box').innerHTML = html;  
+  document.body.style.backgroundColor = `rgb(${randomBackgroundGen()}, ${randomBackgroundGen()}, ${randomBackgroundGen()})`;
 
 }
+
+setInterval(printQuote, 5000);
 
 /***
  * click event listener for the print quote button
